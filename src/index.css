@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 239 246 255;
+    --foreground: 30 58 138;
+    --card: 255 255 255;
+    --card-foreground: 30 58 138;
+    --popover: 255 255 255;
+    --popover-foreground: 30 58 138;
+    --primary: 30 64 175;
+    --primary-foreground: 255 255 255;
+    --secondary: 59 130 246;
+    --secondary-foreground: 255 255 255;
+    --muted: 219 234 254;
+    --muted-foreground: 71 85 105;
+    --accent: 239 246 255;
+    --accent-foreground: 30 64 175;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 191 219 254;
+    --input: 219 234 254;
+    --ring: 30 64 175;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
