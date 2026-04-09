@@ -54,7 +54,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <Phone size={15} className="text-blue-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-slate-400">400-xxx-xxxx</span>
+                <span className="text-sm text-slate-400">028-67878802</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={15} className="text-blue-400 mt-0.5 shrink-0" />
@@ -62,18 +62,15 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={15} className="text-blue-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-slate-400">四川省成都市高新区</span>
+                <span className="text-sm text-slate-400">成都市武侯区环球中心N3-1720</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
           <p className="text-xs text-slate-500">
             © {currentYear} 四川蓝信数联科技有限公司 版权所有
-          </p>
-          <p className="text-xs text-slate-500">
-            蜀ICP备XXXXXXXX号
           </p>
         </div>
       </div>

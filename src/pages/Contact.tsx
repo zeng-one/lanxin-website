@@ -5,7 +5,7 @@ const contactInfo = [
   {
     icon: <Phone size={22} className="text-blue-600" />,
     title: '电话咨询',
-    lines: ['400-xxx-xxxx', '028-xxxx-xxxx'],
+    lines: ['028-67878802'],
     sub: '周一至周六 9:00-21:00',
   },
   {
@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: <MapPin size={22} className="text-blue-600" />,
     title: '公司地址',
-    lines: ['四川省成都市高新区', '天府大道中段XXX号XX楼'],
+    lines: ['成都市武侯区环球中心N3-1720'],
     sub: '欢迎来访洽谈',
   },
   {
@@ -282,7 +282,7 @@ export default function Contact() {
                   </div>
                   <div className="text-center">
                     <div className="text-sm font-semibold text-blue-900">四川蓝信数联科技有限公司</div>
-                    <div className="text-xs text-blue-600 mt-1">成都市高新区天府大道中段</div>
+                    <div className="text-xs text-blue-600 mt-1">成都市武侯区环球中心N3-1720</div>
                   </div>
                   {/* Decorative rings */}
                   <div className="absolute w-16 h-16 rounded-full border-2 border-blue-300/50 animate-ping" style={{ animationDuration: '2s' }}></div>
@@ -291,8 +291,8 @@ export default function Contact() {
                   <div className="flex items-start gap-2.5">
                     <MapPin size={15} className="text-blue-500 mt-0.5 shrink-0" />
                     <div>
-                      <div className="text-sm font-medium text-slate-800">四川省成都市高新区</div>
-                      <div className="text-xs text-slate-500 mt-0.5">天府大道中段XXX号XX楼</div>
+                      <div className="text-sm font-medium text-slate-800">成都市武侯区环球中心</div>
+                      <div className="text-xs text-slate-500 mt-0.5">N3-1720</div>
                     </div>
                   </div>
                 </div>
@@ -328,14 +328,14 @@ export default function Contact() {
                 <h3 className="text-sm font-bold mb-1">急需技术支持？</h3>
                 <p className="text-xs text-blue-200 mb-4">拨打热线，立即获得专业帮助</p>
                 <a
-                  href="tel:400xxxxxxxx"
+                  href="tel:028-67878802"
                   className="flex items-center gap-2 px-4 py-3 bg-white/15 hover:bg-white/25 border border-white/20 rounded-xl transition-all duration-200 cursor-pointer"
                 >
                   <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shrink-0">
                     <Phone size={15} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold">400-xxx-xxxx</div>
+                    <div className="text-sm font-bold">028-67878802</div>
                     <div className="text-xs text-blue-200">服务热线，立即拨打</div>
                   </div>
                 </a>
