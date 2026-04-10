@@ -23,26 +23,31 @@ const team = [
   { name: '陈经理', role: '项目管理负责人', exp: 'PMP认证项目经理' },
 ]
 
-const clientLogos = [
-  { name: '新希望集团', logo: '/logos/xinxiwang.svg' },
-  { name: '通威集团', logo: '/logos/tongwei.svg' },
-  { name: '长虹集团', logo: '/logos/changhong.svg' },
-  { name: '泸州老窖', logo: '/logos/luzhoulaojiao.svg' },
-  { name: '五粮液集团', logo: '/logos/wuliangye.svg' },
-  { name: '四川路桥', logo: '/logos/sichuanluqiao.svg' },
-  { name: '东方电气', logo: '/logos/dongfangdianqi.svg' },
-  { name: '攀钢集团', logo: '/logos/pangang.svg' },
-  { name: '成飞集成', logo: '/logos/chengfei.svg' },
-  { name: '四川中烟', logo: '/logos/sichuanzhongyan.svg' },
-  { name: '红旗连锁', logo: '/logos/hongqian.svg' },
-  { name: '蓝剑饮品', logo: '/logos/lanjian.svg' },
-  { name: '科伦药业', logo: '/logos/kelun.svg' },
-  { name: '天齐锂业', logo: '/logos/tianqi.svg' },
-  { name: '川投能源', logo: '/logos/chuantou.svg' },
-  { name: '四川成渝', logo: '/logos/sichuanchengyu.svg' },
-  { name: '富森美家居', logo: '/logos/fusenmei.svg' },
-  { name: '水井坊', logo: '/logos/shuijingfang.svg' },
-  { name: '舍得酒业', logo: '/logos/shede.svg' },
+// 有真实Logo图片的企业
+const clientLogosWithImage = [
+  { name: '泸州老窖', logo: '/lanxin-website/logos/luzhoulaojiao.png' },
+  { name: '东方电气', logo: '/lanxin-website/logos/dongfangdianqi.png' },
+  { name: '科伦药业', logo: '/lanxin-website/logos/kelun.png' },
+  { name: '天齐锂业', logo: '/lanxin-website/logos/tianqi.svg' },
+]
+
+// 没有真实Logo的企业，用品牌色块
+const clientLogosWithColor = [
+  { name: '新希望集团', abbr: '新希望', color: '#4CAF50', bgColor: '#E8F5E9' },
+  { name: '通威集团', abbr: '通威', color: '#1976D2', bgColor: '#E3F2FD' },
+  { name: '长虹集团', abbr: '长虹', color: '#D32F2F', bgColor: '#FFEBEE' },
+  { name: '五粮液集团', abbr: '五粮液', color: '#F9A825', bgColor: '#FFFDE7' },
+  { name: '四川路桥', abbr: '四川路桥', color: '#1565C0', bgColor: '#E3F2FD' },
+  { name: '攀钢集团', abbr: '攀钢', color: '#37474F', bgColor: '#ECEFF1' },
+  { name: '成飞集成', abbr: '成飞集成', color: '#1565C0', bgColor: '#E3F2FD' },
+  { name: '四川中烟', abbr: '四川中烟', color: '#C62828', bgColor: '#FFEBEE' },
+  { name: '红旗连锁', abbr: '红旗连锁', color: '#D32F2F', bgColor: '#FFEBEE' },
+  { name: '蓝剑饮品', abbr: '蓝剑', color: '#0277BD', bgColor: '#E1F5FE' },
+  { name: '川投能源', abbr: '川投能源', color: '#1565C0', bgColor: '#E3F2FD' },
+  { name: '四川成渝', abbr: '四川成渝', color: '#1565C0', bgColor: '#E3F2FD' },
+  { name: '富森美家居', abbr: '富森美', color: '#E65100', bgColor: '#FFF3E0' },
+  { name: '水井坊', abbr: '水井坊', color: '#8B0000', bgColor: '#FFEBEE' },
+  { name: '舍得酒业', abbr: '舍得', color: '#6A1B9A', bgColor: '#F3E5F5' },
 ]
 
 export default function About() {
@@ -209,21 +214,64 @@ export default function About() {
           </div>
 
           {/* Logo Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
-            {clientLogos.map((client, idx) => (
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+            {/* 有真实Logo的企业 */}
+            {clientLogosWithImage.map((client, idx) => (
               <div
-                key={idx}
-                className="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-300 rounded-xl p-6 flex flex-col items-center justify-center transition-all duration-300 cursor-default shadow-sm hover:shadow-md"
+                key={`img-${idx}`}
+                className="group bg-white rounded-xl overflow-hidden transition-all duration-300 cursor-default shadow-sm hover:shadow-lg hover:-translate-y-1 border border-slate-100"
                 title={client.name}
               >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="w-full h-12 object-contain mb-2"
-                />
-                <span className="text-xs text-slate-500 text-center">{client.name}</span>
+                <div className="aspect-[4/3] flex items-center justify-center p-4">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
               </div>
             ))}
+            
+            {/* 没有真实Logo的企业，用品牌色块 */}
+            {clientLogosWithColor.map((client, idx) => {
+              const isFourChars = client.abbr.length >= 4;
+              return (
+                <div
+                  key={`color-${idx}`}
+                  className="group rounded-xl overflow-hidden transition-all duration-300 cursor-default shadow-sm hover:shadow-lg hover:-translate-y-1"
+                  style={{ backgroundColor: client.bgColor }}
+                  title={client.name}
+                >
+                  <div className="aspect-[4/3] flex flex-col items-center justify-center p-4">
+                    {isFourChars ? (
+                      // 4个字：分两排，每排2个字
+                      <div className="text-center">
+                        <div 
+                          className="text-xl sm:text-2xl font-bold leading-tight"
+                          style={{ color: client.color }}
+                        >
+                          {client.abbr.slice(0, 2)}
+                        </div>
+                        <div 
+                          className="text-xl sm:text-2xl font-bold leading-tight"
+                          style={{ color: client.color }}
+                        >
+                          {client.abbr.slice(2)}
+                        </div>
+                      </div>
+                    ) : (
+                      // 2-3个字：一排显示
+                      <span 
+                        className="text-2xl sm:text-3xl font-bold"
+                        style={{ color: client.color }}
+                      >
+                        {client.abbr}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Stats */}

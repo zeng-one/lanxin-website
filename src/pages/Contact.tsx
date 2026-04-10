@@ -55,13 +55,39 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          company: form.company,
+          message: form.message || form.service,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        setError(result.error || '提交失败，请稍后重试')
+      }
+    } catch (err) {
+      setError('网络错误，请检查网络连接')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1200)
+    }
   }
 
   return (
@@ -152,6 +178,12 @@ export default function Contact() {
                     </button>
                   </div>
                 ) : (
+                  <>
+                  {error && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                      {error}
+                    </div>
+                  )}
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -268,6 +300,7 @@ export default function Contact() {
                       )}
                     </button>
                   </form>
+                  </>
                 )}
               </div>
             </div>
