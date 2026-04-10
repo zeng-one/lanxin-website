@@ -24,26 +24,25 @@ const team = [
 ]
 
 const clientLogos = [
-  { name: '新希望集团', abbr: '新希望' },
-  { name: '通威集团', abbr: '通威' },
-  { name: '长虹集团', abbr: '长虹' },
-  { name: '泸州老窖', abbr: '泸州老窖' },
-  { name: '五粮液集团', abbr: '五粮液' },
-  { name: '四川路桥', abbr: '四川路桥' },
-  { name: '东方电气', abbr: '东方电气' },
-  { name: '攀钢集团', abbr: '攀钢' },
-  { name: '成飞集成', abbr: '成飞集成' },
-  { name: '四川中烟', abbr: '四川中烟' },
-  { name: '红旗连锁', abbr: '红旗连锁' },
-  { name: '蓝剑饮品', abbr: '蓝剑' },
-  { name: '科伦药业', abbr: '科伦药业' },
-  { name: '天齐锂业', abbr: '天齐锂业' },
-  { name: '川投能源', abbr: '川投能源' },
-  { name: '四川成渝', abbr: '四川成渝' },
-  { name: '富森美家居', abbr: '富森美' },
-  { name: '水井坊', abbr: '水井坊' },
-  { name: '舍得酒业', abbr: '舍得' },
-  { name: '四川长虹', abbr: '长虹' },
+  { name: '新希望集团', logo: '/logos/xinxiwang.svg' },
+  { name: '通威集团', logo: '/logos/tongwei.svg' },
+  { name: '长虹集团', logo: '/logos/changhong.svg' },
+  { name: '泸州老窖', logo: '/logos/luzhoulaojiao.svg' },
+  { name: '五粮液集团', logo: '/logos/wuliangye.svg' },
+  { name: '四川路桥', logo: '/logos/sichuanluqiao.svg' },
+  { name: '东方电气', logo: '/logos/dongfangdianqi.svg' },
+  { name: '攀钢集团', logo: '/logos/pangang.svg' },
+  { name: '成飞集成', logo: '/logos/chengfei.svg' },
+  { name: '四川中烟', logo: '/logos/sichuanzhongyan.svg' },
+  { name: '红旗连锁', logo: '/logos/hongqian.svg' },
+  { name: '蓝剑饮品', logo: '/logos/lanjian.svg' },
+  { name: '科伦药业', logo: '/logos/kelun.svg' },
+  { name: '天齐锂业', logo: '/logos/tianqi.svg' },
+  { name: '川投能源', logo: '/logos/chuantou.svg' },
+  { name: '四川成渝', logo: '/logos/sichuanchengyu.svg' },
+  { name: '富森美家居', logo: '/logos/fusenmei.svg' },
+  { name: '水井坊', logo: '/logos/shuijingfang.svg' },
+  { name: '舍得酒业', logo: '/logos/shede.svg' },
 ]
 
 export default function About() {
@@ -210,16 +209,19 @@ export default function About() {
           </div>
 
           {/* Logo Grid */}
-          <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
             {clientLogos.map((client, idx) => (
               <div
                 key={idx}
-                className="group bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 cursor-default"
+                className="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-300 rounded-xl p-6 flex flex-col items-center justify-center transition-all duration-300 cursor-default shadow-sm hover:shadow-md"
                 title={client.name}
               >
-                <span className="text-sm font-semibold text-slate-600 group-hover:text-blue-700 text-center leading-tight">
-                  {client.abbr}
-                </span>
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="w-full h-12 object-contain mb-2"
+                />
+                <span className="text-xs text-slate-500 text-center">{client.name}</span>
               </div>
             ))}
           </div>
