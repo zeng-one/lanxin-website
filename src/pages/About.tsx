@@ -23,6 +23,29 @@ const team = [
   { name: '陈经理', role: '项目管理负责人', exp: 'PMP认证项目经理' },
 ]
 
+const clientLogos = [
+  { name: '新希望集团', abbr: '新希望' },
+  { name: '通威集团', abbr: '通威' },
+  { name: '长虹集团', abbr: '长虹' },
+  { name: '泸州老窖', abbr: '泸州老窖' },
+  { name: '五粮液集团', abbr: '五粮液' },
+  { name: '四川路桥', abbr: '四川路桥' },
+  { name: '东方电气', abbr: '东方电气' },
+  { name: '攀钢集团', abbr: '攀钢' },
+  { name: '成飞集成', abbr: '成飞集成' },
+  { name: '四川中烟', abbr: '四川中烟' },
+  { name: '红旗连锁', abbr: '红旗连锁' },
+  { name: '蓝剑饮品', abbr: '蓝剑' },
+  { name: '科伦药业', abbr: '科伦药业' },
+  { name: '天齐锂业', abbr: '天齐锂业' },
+  { name: '川投能源', abbr: '川投能源' },
+  { name: '四川成渝', abbr: '四川成渝' },
+  { name: '富森美家居', abbr: '富森美' },
+  { name: '水井坊', abbr: '水井坊' },
+  { name: '舍得酒业', abbr: '舍得' },
+  { name: '四川长虹', abbr: '长虹' },
+]
+
 export default function About() {
   return (
     <div>
@@ -168,6 +191,52 @@ export default function About() {
                   <div className="flex-1 hidden sm:block"></div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Logo Wall */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-medium mb-4">
+              合作客户
+            </div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">服务过的企业</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              已为200+企业提供数字化服务，涵盖制造、零售、能源、金融等多个行业
+            </p>
+          </div>
+
+          {/* Logo Grid */}
+          <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
+            {clientLogos.map((client, idx) => (
+              <div
+                key={idx}
+                className="group bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 cursor-default"
+                title={client.name}
+              >
+                <span className="text-sm font-semibold text-slate-600 group-hover:text-blue-700 text-center leading-tight">
+                  {client.abbr}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="mt-12 flex flex-wrap justify-center gap-8 sm:gap-16">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-700">200+</div>
+              <div className="text-sm text-slate-500 mt-1">服务企业</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-700">15+</div>
+              <div className="text-sm text-slate-500 mt-1">行业覆盖</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-700">98%</div>
+              <div className="text-sm text-slate-500 mt-1">续约率</div>
             </div>
           </div>
         </div>
