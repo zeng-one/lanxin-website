@@ -70,21 +70,21 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href="https://cloud.lanxinsl.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 px-4 py-2 border border-blue-500 hover:bg-blue-50 text-blue-600 hover:text-blue-700 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1.5"
-            >
-              <LogIn size={16} />
-              登录
-            </a>
             <Link
               to="/contact"
               className="ml-3 px-5 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-orange-300 cursor-pointer"
             >
               立即咨询
             </Link>
+            <a
+              href="https://cloud.lanxinsl.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-5 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-orange-300 cursor-pointer flex items-center gap-1.5"
+            >
+              <LogIn size={16} />
+              登录
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -120,21 +120,21 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://cloud.lanxinsl.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center mt-2 px-4 py-2.5 border border-blue-500 hover:bg-blue-50 text-blue-600 text-sm font-medium rounded-lg transition-colors duration-150 flex items-center justify-center gap-1.5"
-          >
-            <LogIn size={16} />
-            登录
-          </a>
           <Link
             to="/contact"
             className="block w-full text-center mt-2 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-150 cursor-pointer"
           >
             立即咨询
           </Link>
+          <a
+            href="https://cloud.lanxinsl.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center mt-2 px-4 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-150 flex items-center justify-center gap-1.5"
+          >
+            <LogIn size={16} />
+            登录
+          </a>
         </div>
       </div>
     </header>
