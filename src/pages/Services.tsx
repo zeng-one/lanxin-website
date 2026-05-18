@@ -1,7 +1,29 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Monitor, Code, Globe, Users, Zap, Shield, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle, Monitor, Code, Globe, Users, Zap, Shield, Star, Cpu } from 'lucide-react'
 
 const services = [
+  {
+    id: 'ai',
+    icon: <Cpu size={32} className="text-violet-600" />,
+    tag: 'AI 落地',
+    title: 'AI 落地服务',
+    subtitle: '企业AI转型，一站式赋能',
+    desc: '从AI内容创作、智能客服到私有化部署，为企业提供全链路AI能力落地支撑。帮助企业在营销、客服、运营、管理等核心场景快速接入AI，实现降本增效，抢占AI时代先机。',
+    features: [
+      'AI内容创作：文案、海报、短视频、数字人',
+      '智能客服与知识库：官网/企微AI客服、企业私有知识库',
+      'RPA+AI办公自动化：自动报表、自动对账、报税、数据爬取',
+      '企业AI搜索优化：百度+AI引擎品牌占位、官网AI收录',
+      '大模型私有化部署与微调：私有AI、行业模型',
+      'AI咨询与培训：企业AI转型规划、员工AI技能培训',
+    ],
+    cases: ['某科技公司官网AI客服上线', '连锁餐饮集团RPA自动对账系统', '某制造企业行业大模型私有化部署'],
+    color: 'violet',
+    bgGradient: 'from-violet-600 to-purple-700',
+    lightBg: 'from-violet-50 to-purple-100',
+    border: 'border-violet-200',
+    tagColor: 'bg-violet-100 text-violet-700 border-violet-200',
+  },
   {
     id: 'dingtalk',
     icon: <Monitor size={32} className="text-blue-600" />,
@@ -112,7 +134,7 @@ export default function Services() {
               <span className="text-blue-300">技术解决方案</span>
             </h1>
             <p className="text-blue-100 text-lg leading-relaxed">
-              钉钉代理 · 软件开发 · 网站建设，三大核心服务助力您的企业数字化转型。
+              钉钉代理 · 软件开发 · 网站建设 · AI落地，四大核心服务助力您的企业数字化转型。
             </p>
           </div>
         </div>

@@ -68,10 +68,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-xs text-slate-500">
             © {currentYear} 四川蓝信数联科技有限公司 版权所有
           </p>
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-slate-500 hover:text-blue-400 transition-colors"
+          >
+            蜀ICP备2025157158号-1
+          </a>
         </div>
       </div>
     </footer>
