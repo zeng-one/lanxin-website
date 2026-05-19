@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              专注于钉钉生态服务、软件开发与网站建设，为企业数字化转型提供专业技术解决方案。
+              专注于钉钉生态服务、软件开发、网站建设与 AI 落地服务，为企业数字化转型提供专业技术解决方案。
             </p>
           </div>
 

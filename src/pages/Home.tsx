@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Users, Code, Monitor, Globe, Shield, Zap, ChevronRight } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, Code, Monitor, Globe, Shield, Zap, ChevronRight, Cpu } from 'lucide-react'
 
 const services = [
+  {
+    icon: <Cpu size={28} className="text-violet-600" />,
+    title: 'AI 落地服务',
+    desc: '从AI内容创作、智能客服到私有化部署，为企业提供全链路AI能力落地支撑，助力降本增效。',
+    color: 'from-violet-50 to-purple-100',
+    border: 'border-violet-200',
+  },
   {
     icon: <Monitor size={28} className="text-blue-600" />,
     title: '钉钉代理服务',
@@ -76,7 +83,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg text-blue-100 leading-relaxed mb-8 max-w-xl">
-              四川蓝信数联科技，专注钉钉代理服务、软件定制开发、网站建设，
+              四川蓝信数联科技，专注钉钉代理服务、软件定制开发、网站建设与 AI 落地服务，
               为企业提供一站式数字化技术解决方案。
             </p>
 
@@ -132,7 +139,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => (
               <div
                 key={service.title}

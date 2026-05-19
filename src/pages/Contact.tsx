@@ -28,7 +28,7 @@ const contactInfo = [
   },
 ]
 
-const serviceOptions = ['钉钉代理服务', '软件定制开发', '网站建设', '系统集成', '其他咨询']
+const serviceOptions = ['AI 落地服务', '钉钉代理服务', '软件定制开发', '网站建设', '系统集成', '其他咨询']
 
 type FormState = {
   name: string
@@ -198,7 +198,7 @@ export default function Contact() {
                           value={form.name}
                           onChange={handleChange}
                           placeholder="请输入姓名"
-                          className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
+                          className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
                         />
                       </div>
                       <div>
@@ -212,7 +212,7 @@ export default function Contact() {
                           value={form.company}
                           onChange={handleChange}
                           placeholder="请输入公司名称"
-                          className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
+                          className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
                         />
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export default function Contact() {
                           value={form.phone}
                           onChange={handleChange}
                           placeholder="请输入手机号码"
-                          className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
+                          className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
                         />
                       </div>
                       <div>
@@ -244,7 +244,7 @@ export default function Contact() {
                           value={form.email}
                           onChange={handleChange}
                           placeholder="请输入邮箱地址"
-                          className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
+                          className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white"
                         />
                       </div>
                     </div>
@@ -258,7 +258,7 @@ export default function Contact() {
                         name="service"
                         value={form.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white cursor-pointer"
+                        className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white cursor-pointer"
                       >
                         <option value="">请选择服务类型</option>
                         {serviceOptions.map((opt) => (
@@ -278,7 +278,7 @@ export default function Contact() {
                         value={form.message}
                         onChange={handleChange}
                         placeholder="请描述您的需求或问题，我们将为您提供针对性的解决方案..."
-                        className="w-full px-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white resize-none"
+                        className="w-full px-4 py-2.5 text-sm text-slate-900 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white resize-none"
                       />
                     </div>
 
